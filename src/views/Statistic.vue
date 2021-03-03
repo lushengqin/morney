@@ -1,15 +1,16 @@
 <template>
-    <div>右
-        <Nav></Nav>
+    <div>
+        <layout>我是statistic页面</layout>
     </div>
 </template>
 
 <script lang="ts">
-    // import Nav from '@/components/Nav.vue'
-    //
-    // export default {
-    //     components: {Nav}
-    // };
+    import Layout from '@/components/Layout.vue';
+
+    export default {
+        name: 'statistic',
+        components: {Layout}
+    };
 </script>
 
 <style lang="scss" scoped>

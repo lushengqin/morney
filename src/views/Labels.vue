@@ -1,17 +1,16 @@
 <template>
     <div>
-
-        中间的
-        <Nav></Nav>
+        <layout>我是lables页面</layout>
     </div>
 </template>
 
 <script lang="ts">
-    // import Nav from '@/components/Nav.vue'
-    // export default {
-    //     name: 'labels',
-    //     components: {Nav}
-    // };
+    import Layout from '@/components/Layout.vue';
+
+    export default {
+        name: 'labels',
+        components: {Layout}
+    };
 </script>
 
 <style lang="scss" scoped>

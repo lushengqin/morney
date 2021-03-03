@@ -1,18 +1,21 @@
 <template>
     <div>
-        左
-        <Nav></Nav>
+        <layout>
+            我是money页面
+        </layout>
     </div>
 </template>
 
 <script lang="ts">
-    // import Nav from '@/components/Nav.vue'
-    //
-    // export default {
-    //     components: {Nav}
-    // };
+    import Layout from '@/components/Layout.vue';
+
+    export default {
+        name: 'money',
+        components: {Layout}
+    };
 </script>
 
 <style lang="scss" scoped>
+
 
 </style>

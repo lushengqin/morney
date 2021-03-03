@@ -1,10 +1,18 @@
 <template>
   <div id="app">
     <router-view/>
-    <hr>
   </div>
 </template>
 
 <style lang="scss">
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
 
 </style>
