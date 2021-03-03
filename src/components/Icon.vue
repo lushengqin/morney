@@ -1,6 +1,6 @@
 <template>
-    <svg>
-        <use v-bind:xlink:href="'#'+name"></use>
+    <svg class="icon">
+        <use :xlink:href="'#'+name"></use>
     </svg>
 </template>
 
@@ -17,5 +17,6 @@
         vertical-align: -0.15em;
         fill: currentColor;
         overflow: hidden;
+        color: #999;
     }
 </style>
