@@ -2,10 +2,36 @@
     <div class="money">
         <layout>
             <nav class="tags">
-                <router-link to="/" class="pay" active-class="selected">支出</router-link>
-                <router-link to="/" class="income" active-class="selected">收入</router-link>
+                <router-link to="/" class="pay"  active-class="selected">支出</router-link>
+                <router-link to="/" class="income" >收入</router-link>
             </nav>
             <main>
+                <section class="calculator">
+                    <div class="comment">
+                        <label>
+                            <span>备注</span>
+                            <input placeholder="写点备注吧"/>
+                        </label>
+                    </div>
+                    <div class="number">100</div>
+                    <div class="compute clearfix">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>+</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button>-</button>
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                        <button class="accomplish">完成</button>
+                        <button>.</button>
+                        <button>0</button>
+                        <button>清空</button>
+                    </div>
+                </section>
                 <section class="icons">
                     <div class="itemBox">
                         <icon name="canying" />
@@ -36,40 +62,30 @@
                         <span>餐饮</span>
                     </div>
                     <div class="itemBox">
-                        <icon name="jia" />
+                        <icon name="canying" />
                         <span>餐饮</span>
                     </div>
                     <div class="itemBox">
-                        <icon name="jia" />
+                        <icon name="fangzi" />
+                        <span>餐饮</span>
+                    </div>
+                    <div class="itemBox">
+                        <icon name="gouwu" />
+                        <span>餐饮</span>
+                    </div>
+                    <div class="itemBox">
+                        <icon name="canying" />
+                        <span>餐饮</span>
+                    </div>
+                    <div class="itemBox">
+                        <icon name="fangzi" />
+                        <span>餐饮</span>
+                    </div>
+                    <div class="itemBox">
+                        <icon name="gouwu" />
                         <span>餐饮</span>
                     </div>
 
-                </section>
-                <section class="calculator">
-                    <div class="comment">
-                        <label>
-                            <span>备注</span>
-                            <input placeholder="写点备注吧"/>
-                        </label>
-                    </div>
-                    <div class="number">100</div>
-                    <div class="compute">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>+</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                        <button>-</button>
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
-                        <button>完成</button>
-                        <button>.</button>
-                        <button>0</button>
-                        <button>清空</button>
-                    </div>
                 </section>
             </main>
         </layout>
@@ -101,9 +117,8 @@
         display: flex;
         padding: 12px 60px;
         overflow-x: auto;
-        .pay{
-            border-right: 1px solid #fff ;
-        }
+        font-size: 30px;
+        line-height: 2.2rem ;
         .pay,
         .income{
             flex: 1;
@@ -111,34 +126,46 @@
             justify-content: center;
             text-align: center;
             font-size: 24px;
-
+            border: 1px solid #fff ;
+            margin-left: -1px;
+        }
+        .pay{
+            border-radius: 6px 0 0 6px;
+        }
+        .income{
+            border-radius:  0 6px 6px 0 ;
         }
         .pay.selected,
         .income.selected{
-            color: rgba(255,255,255,0.6);
+            background-color: #fff;
+            color: $blue;
         }
     }
-    .main{
+    main{
         display: flex;
-        
+        flex-direction: column-reverse;
+        justify-content: center;
+        height: 79.5vh;
     }
     .icons{
-        height: 31vh;
-        margin-top: 16px;
-        margin-left: 10px;
-        margin-right: 10px;
+        height: 33vh;
+        flex: 1;
+        padding-top: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
         display: flex;
         flex-wrap: wrap;
         text-align: center;
         align-content:stretch;
+        max-width: 100vw;
+        overflow-x: auto;
         .itemBox{
             display: flex;
-            width: 20%;
+            width: 25%;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             flex-wrap: nowrap ;
-            padding: 10px;
             .icon{
                 background-color: #f4f4f4;
                 display: flex;
@@ -167,8 +194,8 @@
 
     }
     .calculator{
-        height: 45vh;
-        border: 1px solid red;
+        max-width: 100vw;
+        height: 43vh;
         .comment{
             line-height: 40px;
             background-color: #f8f8f8;
@@ -178,6 +205,7 @@
                 >span{
                     margin-left: 20px;
                     margin-right: 20px;
+                    white-space: nowrap;
                 }
                 input{
                     flex: 1;
@@ -190,6 +218,28 @@
                 }
             }
 
+        }
+        .number{
+            line-height: 2rem;
+            padding-right: 20px;
+            text-align: right;
+            color: #333;
+            font-size: 20px;
+        }
+        .compute{
+            >button{
+                float: left;
+                width: 25%;
+                display: inline-block;
+                height: 2.6rem;
+                background-color: #f4f4f4;
+                border: 1px solid #fff;
+                color: #666;
+            }
+            .accomplish{
+                height: 2.6rem *2;
+                float: right;
+            }
         }
 
     }

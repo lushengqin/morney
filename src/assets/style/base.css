@@ -19,3 +19,9 @@ button,input{
 input::-webkit-input-placeholder{
     color:#aaa;
 }
+
+clearfix:after{
+    content: '';
+    clear: both;
+    display: block;
+}
