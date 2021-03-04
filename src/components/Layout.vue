@@ -20,8 +20,7 @@
         max-width: 100vw;
         height: 100vh;
         .content{
-            width: calc(100% - 40px);
-            margin: 20px;
+            /*width: calc(100% - 40px);*/
             flex: 1;
             align-self: flex-start;
             overflow-y: auto;

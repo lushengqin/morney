@@ -32,6 +32,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "~@/assets/style/helper.scss";
     nav {
           display: flex;
           justify-content: center;
@@ -51,9 +52,9 @@
               }
           }
           > .item.selected{
-              color: red;
+              color:$blue;
               .icon{
-                  color: red;
+                  color: $blue;
               }
           }
       }
