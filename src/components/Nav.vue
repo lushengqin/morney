@@ -35,22 +35,26 @@
     @import "~@/assets/style/helper.scss";
     nav {
           display: flex;
+          height: 10vh;
           justify-content: center;
-          text-align: center;
-          padding-top: 5px;
-          padding-bottom: 5px;
+          align-items: center;
           box-shadow: 0 0 2px rgba(0,0,0,0.1);
           .item {
               flex: 1;
-              text-align: center;
-              align-self: flex-end;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
               text-decoration: none;
-              font-size: 16px;
+              align-self: center;
               .icon{
-                  width: 26px;
-                  height: 26px;
+                  width: 1.6rem;
+                  height: 1.6rem;
               }
           }
+        .title{
+            font-size: 16px;
+        }
           > .item.selected{
               color:$blue;
               .icon{
