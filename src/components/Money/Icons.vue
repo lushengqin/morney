@@ -1,4 +1,5 @@
 <template>
+
     <section class="icons">
         <div class="itemBox">
             <icon name="canying" />
@@ -61,7 +62,6 @@
         name: 'Icons'
     };
 </script>
-
 <style lang="scss" scoped>
     @import "~@/assets/style/helper.scss";
     .icons{

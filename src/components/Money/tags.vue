@@ -1,16 +1,35 @@
 <template>
     <div>
         <nav class="tags">
-            <router-link to="/" class="pay"  active-class="selected">支出</router-link>
-            <router-link to="/" class="income" >收入</router-link>
+            <div class="pay "  :class="type === '-'&&'selected'" @click="selectType( '-')" >支出</div>
+            <div class="income"  :class="type === '+' && 'selected'" @click="selectType('+') ">收入</div>
         </nav>
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
+
     export default {
-        name: 'tags'
+        name: 'tags',
+        props:['fn'],
+        data(){
+            return {
+                type:'-' //-号表示支出 +号表示收入
+            }
+        },
+        mounted(){
+            console.log(this.type)
+        },
+        methods:{
+            selectType(type){ //type只能是-号或者是+号
+                if(type !== '-' && type !== '+'){
+                    throw new Error('type is 错误')
+                }
+                this.type = type
+            }
+        }
     };
+
 </script>
 
 <style lang="scss" scoped>
