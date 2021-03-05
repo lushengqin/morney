@@ -40,20 +40,19 @@
     export default {
         name: 'money',
         components: {Icons, Calculator, Tags, Layout },
-        // props:['selectType','type'],
-        // data(){
-        //     return {
-        //         type:'-' //-号表示支出 +号表示收入
-        //     }
-        // },
-        // methods:{
-        //     selectType(type){ //type只能是-号或者是+号
-        //         if(type !== '-' && type !== '+'){
-        //             throw new Error('type is 错误')
-        //         }
-        //         this.type = type
-        //     }
-        // }
+        data(){
+            return {
+                type:'-' //-号表示支出 +号表示收入
+            }
+        },
+        methods:{
+            selectType(type){ //type只能是-号或者是+号
+                if(type !== '-' && type !== '+'){
+                    throw new Error('type is 错误')
+                }
+                this.type = type
+            }
+        }
     };
 </script>
 
