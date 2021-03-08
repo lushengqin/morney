@@ -1,5 +1,4 @@
 <template>
-
     <section class="icons">
         <div class="itemBox">
             <icon name="canying" />
@@ -21,8 +20,6 @@
             <icon name="yiliao" />
             <span>扫地</span>
         </div>
-
-
     </section>
 </template>
 
