@@ -1,48 +1,18 @@
 <template>
     <div>
         <nav class="tags">
-            <div class="pay "  :class="type === '-'&&'selected'" @click="selectType( '-')" >支出</div>
-            <div class="income"  :class="type === '+' && 'selected'" @click="selectType('+') ">收入</div>
-        </nav>
+            <div class="pay "   :class="type === '-'&&'selected'" @click="$emit('selectType', '-')" >支出</div>
+<div class="income"  :class="type === '+' && 'selected'" @click="$emit('selectType', '+') ">收入</div>
+    </nav>
     </div>
-</template>
+    </template>
 
-<script lang="js">
-    // import Vue from  'vue'; //引入vue
-    // import {Component} from 'vue-property-decorator';
-    // //引入component 它的作用是自动把type 和slectType变成data和methods在这里我们不用写 但是需要引入@Component
-    //
-    // @Component
-    // export default class Types extends  Vue{
-    //     type = '-' ;//支出就'-' 收入‘+’
-    //     selectType(type:string){
-    //         if(type !== '-' && type !== '+'){
-    //             throw new Error("type is error")
-    //         }
-    //         this.type = type
-    //     }
-    // }
+    <script lang="ts">
 
 
     export default {
         name: 'tags',
-        props:['selectType','type'],
-        // data(){
-        //     return {
-        //         type:'-' //-号表示支出 +号表示收入
-        //     }
-        // },
-        // mounted(){
-        //     console.log(this.type)
-        // },
-        // methods:{
-        //     selectType(type){ //type只能是-号或者是+号
-        //         if(type !== '-' && type !== '+'){
-        //             throw new Error('type is 错误')
-        //         }
-        //         this.type = type
-        //     }
-        // }
+        props:['type'],
     };
 
 </script>

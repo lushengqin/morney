@@ -3,63 +3,32 @@
     <section class="icons">
         <div class="itemBox">
             <icon name="canying" />
-            <span>餐饮</span>
+            <span>兼职</span>
         </div>
         <div class="itemBox">
             <icon name="fangzi" />
-            <span>餐饮</span>
+            <span>吃饭</span>
         </div>
         <div class="itemBox">
             <icon name="gouwu" />
-            <span>餐饮</span>
+            <span>滴滴</span>
         </div>
         <div class="itemBox">
             <icon name="jiaotong" />
-            <span>餐饮</span>
+            <span>美工</span>
         </div>
         <div class="itemBox">
             <icon name="yiliao" />
-            <span>餐饮</span>
+            <span>扫地</span>
         </div>
-        <div class="itemBox">
-            <icon name="yule" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="jia" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="canying" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="fangzi" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="gouwu" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="canying" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="fangzi" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="gouwu" />
-            <span>餐饮</span>
-        </div>
+
 
     </section>
 </template>
 
 <script lang="ts">
     export default {
-        name: 'Icons'
+        name: 'Icon2'
     };
 </script>
 <style lang="scss" scoped>
@@ -79,7 +48,6 @@
         .itemBox{
             display: flex;
             width: 25%;
-            height: 100px;
             justify-content: center;
             align-items: center;
             flex-direction: column;
