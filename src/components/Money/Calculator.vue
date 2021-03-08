@@ -2,8 +2,9 @@
     <section class="calculator">
         <div class="comment">
             <label>
-                <span>备注</span>
-                <input placeholder="写点备注吧"/>
+                {{value}}
+                <span >备注</span>
+                <input v-model="value" placeholder="写点备注吧"/>
             </label>
         </div>
         <div class="number">{{number}}</div>
@@ -33,6 +34,7 @@
     @Component
 
     export default class Calculator extends Vue{
+        value = '';
         number = '0';
         inputContent(event: MouseEvent){
             const button = (event.target as HTMLButtonElement); //as HTMLButtonElement 表示给event指定它是按钮 所以它的内容不会是空
@@ -91,8 +93,10 @@
     .calculator{
         max-width: 100vw;
         .comment{
+            width: 100vw;
             line-height: 40px;
             background-color: #f8f8f8;
+            overflow-x: auto;
             >label{
                 display: flex;
                 flex-wrap: nowrap;
@@ -126,13 +130,13 @@
                 float: left;
                 width: 25%;
                 display: inline-block;
-                height: 2.6rem;
+                height: 2.3rem;
                 background-color: #f4f4f4;
                 border: 1px solid #fff;
                 color: #666;
             }
             .accomplish{
-                height: 2.6rem *2;
+                height: 2.3rem *2;
                 float: right;
             }
             .zero{
