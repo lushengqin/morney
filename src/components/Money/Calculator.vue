@@ -6,36 +6,84 @@
                 <input placeholder="写点备注吧"/>
             </label>
         </div>
-        <div class="number">100</div>
-        <div class="compute clearfix">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="accomplish">完成</button>
-            <button>.</button>
-            <button>0</button>
-            <button>清空</button>
+        <div class="number">{{number}}</div>
+        <div class="compute clearfix" >
+            <button @click="inputContent">1</button>
+            <button @click="inputContent">2</button>
+            <button @click="inputContent">3</button>
+            <button @click="remove">删除</button>
+            <button @click="inputContent">4</button>
+            <button @click="inputContent">5</button>
+            <button @click="inputContent">6</button>
+            <button @click="clear">清空</button>
+            <button @click="inputContent">7</button>
+            <button @click="inputContent">8</button>
+            <button @click="inputContent">9</button>
+            <button @click="accomplish" class="accomplish">完成</button>
+            <button class="zero" @click="inputContent">0</button>
+            <button @click="inputContent">.</button>
         </div>
     </section>
 </template>
 
 <script lang="ts">
     import Vue from 'vue';
-    import {Component} from 'vue-property-decorator';
+    import {Component,Prop} from 'vue-property-decorator';
 
     @Component
 
-    export default class Types extends Vue{
+    export default class Calculator extends Vue{
+        number = '0';
+        inputContent(event: MouseEvent){
+            const button = (event.target as HTMLButtonElement); //as HTMLButtonElement 表示给event指定它是按钮 所以它的内容不会是空
+            const input  = button.textContent as string; //加！表示除了不为空的数
+            // console.log(button.textContent);
+            // this.number += button.textContent
+            // if(this.number === '0'){
+            //     if('0123456789'.indexOf(input) >= 0){
+            //        this.number = input;
+            //         console.log('执行完了');
+            //     }else{
+            //         console.log('.');
+            //         this.number += button.textContent;
+            //
+            //     }
+            //     return;
+            // }
+            if(this.number.length >= 16){
+                return
+            }
+            if (this.number === '0') {
+                if ('0123456789'.indexOf(input) >= 0) {
+                    this.number = input;
+                } else {
+                    this.number += input;
+                }
+                return;
+            }
+            // console.log(this.number.indexOf('.'));
+            if(this.number.indexOf('.') >= 0 && input === '.'){
+                return;
+            }
+            this.number += button.textContent;
+        }
+        remove(){
+            if(this.number.length === 1){
+                this.number ='0'
+            }else{
+                this.number = this.number.slice(0,this.number.length-1)
+            }
 
+        }
+        clear(){
+            this.number = '0'
+        }
+        accomplish(){
+            console.log("accomplish");
+        }
     }
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -66,11 +114,12 @@
 
         }
         .number{
-            line-height: 2rem;
+            font-size: 30px;
+            line-height: 60px;
             padding-right: 20px;
             text-align: right;
             color: #333;
-            font-size: 20px;
+            min-height: 60px;
         }
         .compute{
             >button{
@@ -85,6 +134,9 @@
             .accomplish{
                 height: 2.6rem *2;
                 float: right;
+            }
+            .zero{
+                width: 50%;
             }
         }
 

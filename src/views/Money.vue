@@ -18,6 +18,8 @@
     import Icons from '@/components/Money/Icons.vue';
     import Icon2 from '@/components/Money/Icon2.vue';
 
+
+
     export default {
         name: 'money',
         components: {Icons, Calculator, Tags, Layout,Icon2 },
