@@ -2,11 +2,11 @@
 
     <section class="icons">
 
-        <div  v-for="icons in dataSource" :key="icons.id" class="itemBox">
-            {{icons}}
-            <icon name="item.svgS" />
-            <span  >{{icons.title}}</span>
+        <div  v-for="value in dataSource" :key="value.id" class="itemBox">
+            <icon :name="value.svgS" />
+            <span >{{value.title}}</span>
         </div>
+<!--        <span v-for="item in value" :key="item.id"></span>-->
 
     </section>
 </template>
@@ -17,8 +17,10 @@
 
     @Component
     export default class Icons extends Vue{
-        @Prop(Array) icons: string[] | undefined;
-        dataSource: string[] = [];
+        @Prop(Array) value: string[] | undefined;
+        // @Prop() dataSource: string[] = [];  //当我用@Prop导出时 不支持直接赋值 会报错
+        @Prop() dataSource: string[] | undefined;
+
     }
 </script>
 <style lang="scss" scoped>

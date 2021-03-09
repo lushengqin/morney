@@ -1,32 +1,21 @@
 <template>
     <section class="icons">
-        <div class="itemBox">
-            <icon name="canying" />
-            <span>兼职</span>
-        </div>
-        <div class="itemBox">
-            <icon name="fangzi" />
-            <span>吃饭</span>
-        </div>
-        <div class="itemBox">
-            <icon name="gouwu" />
-            <span>滴滴</span>
-        </div>
-        <div class="itemBox">
-            <icon name="jiaotong" />
-            <span>美工</span>
-        </div>
-        <div class="itemBox">
-            <icon name="yiliao" />
-            <span>扫地</span>
+        <div v-for="collect in collectSource"  :key='collect.id'  class="itemBox">
+            <icon  :name="collect.svgS" />
+            <span>{{collect.title}}</span>
         </div>
     </section>
 </template>
 
 <script lang="ts">
-    export default {
-        name: 'Icon2'
-    };
+    import Vue from 'vue';
+    import {Component,Prop} from 'vue-property-decorator';
+
+    @Component
+    export default class Icon2 extends Vue{
+        @Prop(Array) collect: string[]|undefined;
+        @Prop() collectSource: string [] |undefined;
+    }
 </script>
 <style lang="scss" scoped>
     @import "~@/assets/style/helper.scss";
