@@ -1,66 +1,25 @@
 <template>
 
     <section class="icons">
-        <div class="itemBox">
-            <icon name="canying" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="fangzi" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="gouwu" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="jiaotong" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="yiliao" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="yule" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="jia" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="canying" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="fangzi" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="gouwu" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="canying" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="fangzi" />
-            <span>餐饮</span>
-        </div>
-        <div class="itemBox">
-            <icon name="gouwu" />
-            <span>餐饮</span>
+
+        <div  v-for="icons in dataSource" :key="icons.id" class="itemBox">
+            {{icons}}
+            <icon name="item.svgS" />
+            <span  >{{icons.title}}</span>
         </div>
 
     </section>
 </template>
 
 <script lang="ts">
-    export default {
-        name: 'Icons'
-    };
+    import Vue from 'vue';
+    import {Component,Prop} from 'vue-property-decorator';
+
+    @Component
+    export default class Icons extends Vue{
+        @Prop(Array) icons: string[] | undefined;
+        dataSource: string[] = [];
+    }
 </script>
 <style lang="scss" scoped>
     @import "~@/assets/style/helper.scss";
@@ -79,7 +38,7 @@
         .itemBox{
             display: flex;
             width: 25%;
-            height: 100px;
+            height: 90px;
             justify-content: center;
             align-items: center;
             flex-direction: column;

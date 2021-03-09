@@ -4,7 +4,7 @@
             <Tags @selectType="selectType" :type="type" />
             <main>
                 <Calculator />
-                <Icons v-if="type === '-'"/>
+                <Icons :data-source="value" v-if="type === '-'"/>
                 <Icon2 v-if="type === '+'"/>
             </main>
         </layout>
@@ -18,14 +18,86 @@
     import Icons from '@/components/Money/Icons.vue';
     import Icon2 from '@/components/Money/Icon2.vue';
 
-
-
     export default {
         name: 'money',
         components: {Icons, Calculator, Tags, Layout,Icon2 },
         data(){
             return {
-                type:'-' //-号表示支出 +号表示收入
+                type:'-', //-号表示支出 +号表示收入
+                value:[
+                    {
+                        id:0,
+                        title:'餐饮',
+                        svgS:'canying'
+                    },
+                    {
+                        id:1,
+                        title:'餐饮',
+                        svgS:'fangzi'
+                    },
+                    {
+                        id:2,
+                        title:'餐饮',
+                        svgS:'gouwu'
+                    },
+                    {
+                        id:3,
+                        title:'餐饮',
+                        svgS:'jiaotong'
+                    },
+                    {
+                        id:4,
+                        title:'餐饮',
+                        svgS:'yiliao'
+                    },
+                    {
+                        id:5,
+                        title:'餐饮',
+                        svgS:'yule'
+                    },
+                    {
+                        id:6,
+                        title:'餐饮',
+                        svgS:'jia'
+                    }
+                ],
+                icon2:[
+                    {
+                        id:0,
+                        title:'餐饮2',
+                        svgS:'canying'
+                    },
+                    {
+                        id:1,
+                        title:'餐饮2',
+                        svgS:'fangzi'
+                    },
+                    {
+                        id:2,
+                        title:'餐饮2',
+                        svgS:'gouwu'
+                    },
+                    {
+                        id:3,
+                        title:'餐饮2',
+                        svgS:'jiaotong'
+                    },
+                    {
+                        id:4,
+                        title:'餐饮2',
+                        svgS:'yiliao'
+                    },
+                    {
+                        id:5,
+                        title:'餐饮2',
+                        svgS:'yule'
+                    },
+                    {
+                        id:6,
+                        title:'餐饮2',
+                        svgS:'jia'
+                    }
+                ]
             }
         },
         methods:{
@@ -50,7 +122,7 @@
     main{
         display: flex;
         flex-direction: column-reverse;
-        justify-content: center;
+        justify-content: flex-start;
         height: 80vh;
     }
 </style>

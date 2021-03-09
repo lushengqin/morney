@@ -29,7 +29,7 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    import {Component,Prop} from 'vue-property-decorator';
+    import {Component} from 'vue-property-decorator';
 
     @Component
 
@@ -39,19 +39,6 @@
         inputContent(event: MouseEvent){
             const button = (event.target as HTMLButtonElement); //as HTMLButtonElement 表示给event指定它是按钮 所以它的内容不会是空
             const input  = button.textContent as string; //加！表示除了不为空的数
-            // console.log(button.textContent);
-            // this.number += button.textContent
-            // if(this.number === '0'){
-            //     if('0123456789'.indexOf(input) >= 0){
-            //        this.number = input;
-            //         console.log('执行完了');
-            //     }else{
-            //         console.log('.');
-            //         this.number += button.textContent;
-            //
-            //     }
-            //     return;
-            // }
             if(this.number.length >= 16){
                 return
             }
@@ -130,13 +117,13 @@
                 float: left;
                 width: 25%;
                 display: inline-block;
-                height: 2.3rem;
+                height: 2.6rem;
                 background-color: #f4f4f4;
                 border: 1px solid #fff;
                 color: #666;
             }
             .accomplish{
-                height: 2.3rem *2;
+                height: 2.6rem *2;
                 float: right;
             }
             .zero{

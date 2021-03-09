@@ -49,7 +49,7 @@
             align-items: center;
             flex-direction: column;
             flex-wrap: nowrap ;
-            height: 100px;
+            height: 90px;
             .icon{
                 background-color: #f4f4f4;
                 display: flex;

@@ -2,8 +2,8 @@
     <div>
         <nav class="tags">
             <div class="pay "   :class="type === '-'&&'selected'" @click="$emit('selectType', '-')" >支出</div>
-<div class="income"  :class="type === '+' && 'selected'" @click="$emit('selectType', '+') ">收入</div>
-    </nav>
+            <div class="income"  :class="type === '+' && 'selected'" @click="$emit('selectType', '+') ">收入</div>
+        </nav>
     </div>
     </template>
 
